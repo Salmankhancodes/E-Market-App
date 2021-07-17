@@ -3,7 +3,7 @@ const app = express()
 const products = require('./data/products')
 
 app.get('/', (req, res) => {
-  res.json('Api is running')
+  res.json('Api is running...')
 })
 
 app.get('/api/products', (req, res) => {
