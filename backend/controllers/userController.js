@@ -76,5 +76,4 @@ const getUserProfile = asyncHandler(async (req, res) => {
   }
 })
 
-export { authUser, getUserProfile }
 export { authUser, registerUser, getUserProfile }
