@@ -91,8 +91,8 @@ export {
   deleteProduct,
   createProduct,
   updateProduct,
+  createProductReview,
 }
-
 
 // @desc    Create new review
 // @route   POST /api/products/:id/reviews
