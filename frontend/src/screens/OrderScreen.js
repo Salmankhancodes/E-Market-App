@@ -15,9 +15,12 @@ import {
   ORDER_PAY_RESET,
   ORDER_DELIVER_RESET,
 } from '../constants/orderConstants'
+
 const OrderScreen = ({ match }) => {
   const orderId = match.params.id
+
   const [sdkReady, setSdkReady] = useState(false)
+
   const dispatch = useDispatch()
 
   const orderDetails = useSelector((state) => state.orderDetails)
@@ -31,6 +34,7 @@ const OrderScreen = ({ match }) => {
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
+
   if (!loading) {
     //   Calculate prices
     const addDecimals = (num) => {
@@ -200,7 +204,6 @@ const OrderScreen = ({ match }) => {
                   )}
                 </ListGroup.Item>
               )}
-
               {loadingDeliver && <Loader />}
               {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                 <ListGroup.Item>
