@@ -98,11 +98,16 @@ const OrderScreen = ({ match, history }) => {
             <ListGroup.Item>
               <h2>Shipping</h2>
               <p>
-                <strong>Name: </strong> {order.user.name}
+                <strong>Name: </strong>{' '}
+                {order.user ? order.user.name : 'DELETED USER'}
               </p>
               <p>
                 <strong>Email: </strong>{' '}
-                <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+                {order.user ? (
+                  <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+                ) : (
+                  ' DELETED USER'
+                )}
               </p>
               <p>
                 <strong>Address:</strong>
